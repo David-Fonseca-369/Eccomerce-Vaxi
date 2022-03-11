@@ -21,13 +21,7 @@ export class AppComponent {
       //obtenemos la data que devuelve de la colección
       //snapshot changes toma una captura de los datos que consulta al momento y los devuelve 
       console.log(personas.map(x => x.payload.doc.data())); //map hace el recorrido de la  y extraiga la data de la colección
-
-
-      } 
-        
-
-
-      )
+    })
   }
 }
 

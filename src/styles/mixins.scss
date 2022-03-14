@@ -1,0 +1,22 @@
+//permiten compartir estilos entre diferentes componentes
+
+
+@import "colors";
+
+
+
+@mixin shadow { //simbra
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+
+@mixin card { //container
+    padding: 32px;
+    background: $base; //viene desde colors, llama a la variable base
+    border-radius: 8px;
+    //que tenga una sombra y llama mixin de shadow 
+    @include shadow;
+
+}
+
+

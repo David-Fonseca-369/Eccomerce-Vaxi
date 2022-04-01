@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import {AngularFireModule} from '@angular/fire'; //tiene todas la librerias de conexxión entre un proyecto Angular y Firebase
-import {AngularFirestoreModule} from '@angular/fire/firestore';  //base de datos
-import {AngularFireAuthModule} from '@angular/fire/auth';  // seguridad
-import {AngularFireStorageModule} from '@angular/fire/storage';  //para el storage
+import { AngularFireModule } from '@angular/fire'; //tiene todas la librerias de conexxión entre un proyecto Angular y Firebase
+import { AngularFirestoreModule } from '@angular/fire/firestore'; //base de datos
+import { AngularFireAuthModule } from '@angular/fire/auth'; // seguridad
+import { AngularFireStorageModule } from '@angular/fire/storage'; //para el storage
 
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,10 +13,7 @@ import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent
-  ],
+  declarations: [AppComponent, HeaderComponent],
 
   imports: [
     BrowserModule,
@@ -24,10 +21,9 @@ import { HeaderComponent } from './components/header/header.component';
     AngularFireModule.initializeApp(environment.firebase.config), //configuracion del environment
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
-
+    AngularFireStorageModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

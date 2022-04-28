@@ -5,13 +5,13 @@ import { SharedComponent } from './shared.component';
 const routes: Routes = [
   {
     path: '',
-    component: SharedComponent
-  }
+    component: SharedComponent,
+  },
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class SharedRoutingModule { }
+export class SharedRoutingModule {}
+// Este es un comentario

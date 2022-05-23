@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { regex, regexErrors } from '@app/Shared';
 @Component({
   selector: 'app-shared',
   templateUrl: './shared.component.html',
@@ -8,12 +8,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SharedComponent implements OnInit {
   form!: FormGroup; //el signo de admiaración '!' forza la inicialización
+  isInline!: boolean;
+  regexErrors = regexErrors;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      input: [null],
+      input: [
+        null,
+        {
+          updateOn: 'blur', //cuando pierda el foco se dispara
+          validators: [
+            Validators.required,
+            Validators.minLength(3),
+            Validators.pattern(regex.number),
+          ],
+        },
+      ],
     });
   }
 
@@ -23,5 +35,9 @@ export class SharedComponent implements OnInit {
 
   onSubmit(): void {
     console.log('Presiono botón submit');
+  }
+
+  organizarElemento() {
+    this.isInline = !this.isInline;
   }
 }

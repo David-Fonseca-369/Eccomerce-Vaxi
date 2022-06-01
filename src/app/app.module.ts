@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { environment } from '@src/environments/environment';
 import { HeaderComponent } from './components/header/header.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
 
@@ -22,6 +24,7 @@ import { HeaderComponent } from './components/header/header.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -61,7 +61,7 @@ export class PasswordComponent implements OnInit, ControlValueAccessor {
   }
 
   onBlur(): void{
-
+    this.propagateTouched();
   }
 
 
